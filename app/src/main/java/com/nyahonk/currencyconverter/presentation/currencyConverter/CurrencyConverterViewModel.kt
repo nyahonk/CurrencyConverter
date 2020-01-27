@@ -21,22 +21,16 @@ class CurrencyConverterViewModel @Inject constructor(
     val error = PublishRelay.create<DBUpdateCode>()
 
     //input
-    fun onCalculateButtonClick(source:CurrenciesMap, target: CurrenciesMap, amount: String) {
+    fun onCalculateButtonClick(source: CurrenciesMap, target: CurrenciesMap, amount: String) {
         updater.getUpdateObservable().subscribe {
             if(it == DBUpdateCode.UPDATE_STARTED) handleError(it)
-            else interactor.getConversionRatesOnly()
+            else interactor.getConversionRatesOnly(source, target, amount)
                 .subscribe(
-                    { currencies ->
-                        if (source == CurrenciesMap.USD) {
-                            (amount.toDouble() * currencies.getValue(target))
-                        } else {
-                            (amount.toDouble() / currencies.getValue(source) * currencies.getValue(target))
-                        }.let {
-                            val df = DecimalFormat("#.##")
-                            df.roundingMode = RoundingMode.CEILING
+                    {
+                        val df = DecimalFormat("#.##")
+                        df.roundingMode = RoundingMode.CEILING
 
-                            targetValue.accept(df.format(it))
-                        }
+                        targetValue.accept(df.format(it))
                     },
                     {
                         handleError(DBUpdateCode.DATABASE_EMPTY)
