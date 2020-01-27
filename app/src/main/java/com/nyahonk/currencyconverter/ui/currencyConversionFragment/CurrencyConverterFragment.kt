@@ -44,19 +44,21 @@ class CurrencyConverterFragment : BaseFragment() {
 
         setTitle(getString(R.string.currency_converter_title))
 
-        currencySpinnerTarget.adapter =
-            ArrayAdapter(
-                this.context!!,
-                R.layout.spinner_item,
-                CurrenciesMap.values()
-            )
+        context?.let {
+            currencySpinnerTarget.adapter =
+                ArrayAdapter(
+                    it,
+                    R.layout.spinner_item,
+                    CurrenciesMap.values()
+                )
 
-        currencySpinnerSource.adapter =
-            ArrayAdapter(
-                this.context!!,
-                R.layout.spinner_item,
-                CurrenciesMap.values()
-            )
+            currencySpinnerSource.adapter =
+                ArrayAdapter(
+                    it,
+                    R.layout.spinner_item,
+                    CurrenciesMap.values()
+                )
+        }
     }
 
     private fun performActions() {
