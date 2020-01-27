@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/notifier_banner"
+        android:background="@color/colorAccentExtra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/notifier_banner_text"
+            android:padding="16dp"
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/background_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_gradient_top" />
+
+    <View
+        android:id="@+id/background_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toTopOf="@+id/horizontal_guideline"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextSourceValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:hint="@string/currency_converter_edit_text_source_hint"
+        android:inputType="numberDecimal"
+        style="@style/ConverterEditTextOnBG"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal_guideline"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTargetValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/currency_converter_edit_text_target_hint"
+        style="@style/ConverterEditText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextSourceValue"
+        app:layout_constraintStart_toStartOf="@+id/editTextSourceValue"
+        app:layout_constraintTop_toTopOf="@+id/horizontal_guideline" />
+
+    <Spinner
+        android:id="@+id/currencySpinnerSource"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/DefaultSpinnerStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vertical_guideline"
+        app:layout_constraintTop_toTopOf="@+id/editTextSourceValue" />
+
+    <Spinner
+        android:id="@+id/currencySpinnerTarget"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/DefaultSpinnerStyle"
+        app:layout_constraintEnd_toEndOf="@+id/background_bottom"
+        app:layout_constraintStart_toStartOf="@+id/vertical_guideline"
+        app:layout_constraintTop_toTopOf="@+id/editTextTargetValue" />
+
+    <ImageButton
+        android:id="@+id/calculateButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/convert_button_bg"
+        android:elevation="8dp"
+        android:src="@drawable/ic_convert_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vertical_guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

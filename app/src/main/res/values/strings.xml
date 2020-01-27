@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">CurrencyConverter</string>
+
+    <string name="currency_converter_title">Currency Convereter</string>
+
+    <!--CurrencyConverter-->
+    <string name="currency_converter_edit_text_source_hint">Enter value</string>
+    <string name="currency_converter_edit_text_target_hint">Converted value</string>
+    <string name="currency_converter_convert_button">Calculate</string>
+    <string name="currency_converter_error_no_data">Can not fetch data</string>
+    <string name="currency_converter_error_no_internet_connection">No internet connection</string>
+    <string name="currency_converter_notification_data_outdated">Could not update the data, conversion rates may be outdated</string>
+    <string name="currency_converter_notification_data_last_update">Last updated:</string>
+    <string name="error_text_update_failed">Could not update data, conversion rates may be outdated</string>
+    <string name="error_text_database_empty">Data is unavailable, try again later</string>
+    <string name="error_text_no_internet">No network connection</string>
+    <string name="error_text_update_in_progress">Update is in progress</string>
+</resources>
