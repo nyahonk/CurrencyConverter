@@ -1,16 +1,15 @@
 # Currency Converter
 
-Приложение позволяет производить конвертацию валют.
+Quick and straightforward calculator for currency conversion.
 
-## Описание
+## Description
 
-Приложение сохраняет данные в память устройства при запуске приложения, если обновить данные не удалось, отображается сообщение об ошибке.
+Fetched data is stored to the permanent storage every time the app is opened. If the app could not fetch data from network, it will use the data stored in the permanent storage and show a banner that data could not be updated and may be outdated.
+Data is fetched from [Exchangeratesapi.io](https://exchangeratesapi.io/)
 
-Данные получает с [Exchangeratesapi.io](https://exchangeratesapi.io/)
+Localization: Russian and English
 
-Локализовано под русский и английский языки.
-
-## Стек
+## Techonolies used
 
 * Kotlin
 * MVVM
@@ -21,7 +20,7 @@
 * Retrofit 2
 * Material
 
-## Скриншоты
+## Screenshots
 
 ![](https://raw.githubusercontent.com/nyahonk/CurrencyConverter/master/screenshots/Screenshot_normal.png)
 
